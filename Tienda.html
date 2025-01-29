@@ -84,6 +84,31 @@
             display: block;
             margin: 0 auto;
         }
+         /* Estilos para el carrito desplegable */
+         #carrito {
+            display: none;
+            background-color: #f8f8f8;
+            padding: 15px;
+            border: 1px solid #ddd;
+            width: 50%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #toggleCarrito {
+            cursor: pointer;
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #toggleCarrito:hover {
+            background-color: #e53d2f;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +117,8 @@
         <nav>
             <h1>Tienda</h1>
             <h1>Localización</h1>
-            <h1>Carrito</h1>
+            <button id="toggleCarrito" onclick="toggleCarrito()">Abrir Carrito</button>
+            <p id="carrito"></p>
         </nav>
     </header>
     <section>
@@ -135,7 +161,20 @@
                 <script>
                     let precio= "";
                     function guardar(nombre){
-                        document.getElementById("carrito").textContent = "Producto seleccionado: " +nombre
+                        document.getElementById("carrito").textContent = nombre
+                    }
+                
+                    function toggleCarrito() {
+                        // Obtiene el elemento del carrito
+                        var carrito = document.getElementById("carrito");
+                        // Cambia la visibilidad del carrito
+                        if (carrito.style.display === "none" || carrito.style.display === "") {
+                            carrito.style.display = "block";
+                            document.getElementById("toggleCarrito").textContent = "Cerrar Carrito";
+                        } else {
+                            carrito.style.display = "none";
+                            document.getElementById("toggleCarrito").textContent = "Abrir Carrito";
+                        }
                     }
                 </script>
             </tbody>
@@ -149,7 +188,6 @@
         <br><br>
     </section>
     <section>
-        <p id="carrito">Nombre del enlace será mostrado aquí.</p>
     </section>
 </body>
 </html>
