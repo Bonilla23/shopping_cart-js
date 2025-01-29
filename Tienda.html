@@ -114,27 +114,28 @@
                     <td>25-02-2026</td>
                     <td>Madrid</td>
                     <td>14$</td>
-                    <td><a href=# onclick="guardar(AppleRed)">here</a></td>
+                    <td><a href=# onclick="guardar('AppleRed')">here</a></td>
                 </tr>
                 <tr>
                     <td>Apple Ellon</td>
                     <td>30-01-2026</td>
                     <td>Barcelona</td>
                     <td>13$</td>
-                    <td><a href=# onclick="guardar(AppleBar)">here</a></td>
+                    <td><a href=# onclick="guardar('AppleBar')">here</a></td>
                 </tr>
                 <tr>
                     <td>Apple apple</td>
                     <td>28-06-2025</td>
                     <td>Valencia</td>
                     <td>19$</td>
-                    <td><a href=# onclick="guardar(AppleVal)">here</a></td>
+                    <td><a href=# onclick="guardar('AppleVal')">here</a></td>
                 </tr>
+                <!----->
                 <!--- Create the script -->
                 <script>
                     let precio= "";
                     function guardar(nombre){
-                        document.getElementById("carrito")
+                        document.getElementById("carrito").textContent = "Producto seleccionado: " +nombre
                     }
                 </script>
             </tbody>
@@ -146,6 +147,9 @@
         <p> Ubicada en el centro de Estocolmo, A Coruña</p>
         <img src="https://imgs.search.brave.com/j0rwP45Bs7rJxwq7_e_Z8PEDPwIjbP7tkl4uW0nbyug/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI5/NjUxNTM2Ni9lcy9m/b3RvL2F5dW50YW1p/ZW50by1kZS1lc3Rv/Y29sbW8tc3VlY2lh/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1fQTN2OWJSaXg4/RWtWak1uSnppbnZy/Y1hqamxCU2VoTnBs/T0ZTaWk5em5NPQ" alt="Descripción de la imagen">
         <br><br>
+    </section>
+    <section>
+        <p id="carrito">Nombre del enlace será mostrado aquí.</p>
     </section>
 </body>
 </html>
