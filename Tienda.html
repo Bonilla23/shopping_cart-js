@@ -160,9 +160,11 @@
                 <!--- Create the script -->
                 <script>
                     let precio= "";
-                    function guardar(nombre){
-                        document.getElementById("carrito").textContent = nombre
+                    function guardar(nombre, precio) {
+                        const carrito = document.getElementById("carrito");
+                        carrito.textContent = "Producto: " + nombre + ", Precio: " + precio;
                     }
+
                 
                     function toggleCarrito() {
                         // Obtiene el elemento del carrito
